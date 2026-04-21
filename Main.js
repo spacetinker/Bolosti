@@ -17,7 +17,7 @@ function moveMap(x,y) {
   }
   if(ypos > 0){
     yposf = Math.abs(ypos) + "N"
-  }else if(xpos < 0){
+  }else if(ypos < 0){
     yposf = Math.abs(ypos) + "S"
   }else {
     yposf = 0;
