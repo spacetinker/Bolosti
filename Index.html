@@ -1,12 +1,13 @@
 <html>
   <body>
-    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:400px;padding:10px;">
+    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px;">
+      <button style="float:right">Character</button>
       <div id="map" style="background-color: white;width: 100px;height:100px;padding:5px;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;">
         <button id="northwest" onclick="moveMap(-1, 1)">NW</button>
         <button id="north" onclick="moveMap(0, 1)">N</button>
         <button id="northeast" onclick="moveMap(1, 1)">NE</button>
         <button id="west" onclick="moveMap(-1, 0)">W</button>
-        <p></p>
+        <button id="encounter" onclick="encounterStart()">X</button>
         <button id="east" onclick="moveMap(1, 0)">E</button>
         <button id="southwest" onclick="moveMap(-1, -1)">SW</button>
         <button id="south" onclick="moveMap(0, -1)">S</button>
@@ -14,8 +15,9 @@
       </div>        
       <div id="map info" style="background-color: white;width: 100px;height:100px;padding:5px;">
         <p id="mapPos">pos: 0, 0</p>
+      </div>
     </div>
-    <div id="combatMenu" hidden>
+    <div id="combatMenu" style="background-color: lightgray;padding: 10px; width: 500px;height: 150px;margin: 5px;">
       <div id="stats">
         <p id="hp">Hp : 100</p>
         <p id="mana">Mp : 5</p>
@@ -26,7 +28,6 @@
         <button id="Power3"> - - </button>
         <button id="Power4"> - - </button>
       </div>
-    </div>
   </body>
 </html>
 <script src="main.js"></script>
