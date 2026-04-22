@@ -1,5 +1,6 @@
 <html>
-  <body> 
+  <body>
+    
     <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px;">
       <button style="float:right" onclick="characterMenu()">Character</button>
       <div id="map" style="background-color: white;width: 100px;height:100px;padding:5px;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;">
@@ -13,12 +14,14 @@
         <button id="south" onclick="moveMap(0, -1)">S</button>
         <button id="southeast" onclick="moveMap(1, -1)">SE</button>
       </div>        
+      
       <div id="map info" style="background-color: white;width: 100px;height:100px;padding:5px;">
         <p id="mapPos">pos: 0, 0</p>
       </div>
     </div>
-    <div id="characterMenu" style="display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 1fr 1fr 1fr;background-color: lightgrey;width: 300px;padding:5px;margin:5px;height:300px;gap: 5px;">
-      <button style="grid-column:1 / span 1;grid-row: 1 / span 1;">Close</button>
+    <div id="characterMenuDiv" style="display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 1fr 1fr 1fr;background-color: lightgrey;width: 300px;padding:5px;margin:5px;height:300px;gap: 5px;" hidden>
+      <button style="grid-column:1 / span 1;grid-row: 1 / span 1;" onclick="closeCharacter()">Close</button>
+      <button style="grid-column:1 / span 1;grid-row: 2 / span 1;">Skill Tree</button>
       <div id="characterInfo" style="grid-column: 2 / span 2 ;grid-row: 1 / span 3 ;background-color: white;"></div> 
     </div>
     <div id="combatMenu" style="background-color: lightgray;padding: 10px; width: 500px;height: 150px;margin: 5px;" hidden>
