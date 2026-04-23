@@ -3,11 +3,13 @@ var mp = 5;
 var xpos = 0;
 var ypos = 0;
 var possibleEncounters = ["battle", "search"];
-var possibleEnemies = ["water", "energy"]
-var powertrees = [1, 2,]
-var powernames = ["scratch", "resistance"]
-var powerspower = [15, 10]
-var powereffect = ["1", "2"]
+var possibleEnemies = ["water", "energy"];
+var enemyTrees = [1, 2]
+var powertrees = [0, 0]
+var powerrequires = [0, 0];
+var powernames = ["scratch", "resistance"];
+var powerspower = [15, 10];
+var powereffect = ["1", "2"];
 //2 is defence in that the ability's power will increase block by that amount
 //1 is jsut damage in that it will damage the opponent by that amount
 
@@ -38,6 +40,11 @@ function encounterStart() {
   if(encounter == "battle") {
     startBattle(possibleEnemies[Math.random(1,possibleEnemies.length)])
   }
+}
+
+function closeIntro() {
+  document.getElementById("intro").hidden = true;
+  document.getElementById("nonCombatMenu").hidden = false;
 }
 
 function characterMenu(){
