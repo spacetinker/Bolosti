@@ -1,7 +1,21 @@
 <html>
   <body>
-    
-    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px;">
+    <div id="intro">
+      <p>
+        recently scientists have created a creature known as the bolosti, this creature is capable of having enhancements making it able to control elements,
+        such as energy, water, earth, plants, and darkness, somehow. either way, recently 15,000 bolosti were released into the wild on the kerstikel colony,
+        another thing of note for bolosti is that they eat and reproduce quickly, and by eat i mean it eats everything that is edible, meaning that if we don't
+        control the bolosti fast enough then it will quickly start destroying the ecosystem of the planet which is not good as you can tell, and the things are
+         very durable and if you can't tire them out, they can survive a lot more than we can hit them without, y'know, tanks and artillery which is simply not a option
+      </p>
+        <p>
+          however, by first weakening it with another Bolotsti, you can kill it with just a Rifle, which you have been provided with, weaken them far enough and finish it with the rifle
+      </p>
+      <button onclick="closeIntro()">
+        start
+      </button>
+    </div>
+    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px;" hidden>
       <button style="float:right" onclick="characterMenu()">Character</button>
       <div id="map" style="background-color: white;width: 100px;height:100px;padding:5px;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;">
         <button id="northwest" onclick="moveMap(-1, 1)">NW</button>
@@ -19,7 +33,7 @@
         <p id="mapPos">pos: 0, 0</p>
       </div>
     </div>
-    <div id="characterMenuDiv" style="display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 1fr 1fr 1fr;background-color: lightgrey;width: 300px;padding:5px;margin:5px;height:300px;gap: 5px;" hidden>
+    <div id="characterMenuDiv" hidden>
       <button style="grid-column:1 / span 1;grid-row: 1 / span 1;" onclick="closeCharacter()">Close</button>
       <button style="grid-column:1 / span 1;grid-row: 2 / span 1;">Skill Tree</button>
       <div id="characterInfo" style="grid-column: 2 / span 2 ;grid-row: 1 / span 3 ;background-color: white;"></div> 
@@ -38,3 +52,26 @@
   </body>
 </html>
 <script src="main.js"></script>
+<style>
+#characterMenuDiv {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: lightgrey;
+  width: 300px;
+  padding:5px;
+  margin:5px;
+  height:300px;
+  gap: 5px;
+}
+
+#map {
+  background-color: white;
+  width: 100px;
+  height:100px;
+  padding:5px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
+}
+</style>="main.js"></script>
