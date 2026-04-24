@@ -18,8 +18,8 @@ let unlockedPowers = [];
 function moveMap(x,y) {
   xpos = xpos + x;
   ypos = ypos + y;
-  var xposf;
-  var yposf;
+  let xposf;
+  let yposf;
   if(xpos > 0){
     xposf = Math.abs(xpos) + "E"
   }else if(xpos < 0){
