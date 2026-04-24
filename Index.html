@@ -2,8 +2,10 @@
   <body>
     <div id="intro">
       <p>
-        recently scientists have created a creature known as the bolosti, this creature is capable of having enhancements making it able to control elements,
-        such as energy, water, earth, plants, and darkness, somehow. either way, recently 15,000 bolosti were released into the wild on the kerstikel colony,
+        recently scientists have created a creature known as the bolosti,
+        this creature is capable of having enhancements making it able to control elements,
+        such as energy, water, earth, plants, and darkness, somehow.
+        either way, recently 15,000 bolosti were released into the wild on the kerstikel colony,
         another thing of note for bolosti is that they eat and reproduce quickly, and by eat i mean it eats everything that is edible, meaning that if we don't
         control the bolosti fast enough then it will quickly start destroying the ecosystem of the planet which is not good as you can tell, and the things are
          very durable and if you can't tire them out, they can survive a lot more than we can hit them without, y'know, tanks and artillery which is simply not a option
@@ -39,22 +41,22 @@
       <div id="characterInfo" style="grid-column: 2 / span 2 ;grid-row: 1 / span 3 ;background-color: white;"></div> 
     </div>
     <div id="skillTree">
-      <div id="lightningTree" style="display:grid;padding:10px;background-color: lightgrey;grid-template-rows: repeat(5, 1fr);grid-template-columns: repeat(5, 1fr)">
-        <button>scorch</button>
-        <button>inferno</button>
+      <div id="energyTree" style="display:grid;padding:10px;background-color: lightgrey;grid-template-rows: repeat(5, 1fr);grid-template-columns: repeat(5, 1fr)">
+        <button style="background-color: darkgray" id="scorch" onclick="learnSkill()">scorch</button>
+        <button style="background-color: darkgray" id="inferno" onclick="learnSkill()">inferno</button>
         <p></p>
-        <button>overcharge</button>
-        <button>lightning Storm</button>
+        <button style="background-color: darkgray" id="overcharge" onclick="learnSkill()">overcharge</button>
+        <button style="background-color: darkgray" id="lightningstorm" onclick="learnSkill()">lightning Storm</button>
         <p></p>
-        <button>fire</button>
+        <button style="background-color: darkgray" id="fire" onclick="learnSkill(4)">fire</button>
         <p style="text-align: center"><----!----></p>
-        <button>lightning</button>
+        <button style="background-color: darkgray" id="lightning" onclick="learnSkill()">lightning</button>
         <p></p>
-        <button>plasma</button>
+        <button style="background-color: darkgray" id="plasma" onclick="learnSkill()">plasma</button>
         <p></p>
-        <button>spark</button>
+        <button style="background-color: white" id="spark" onclick="learnSkill(3)">spark</button>
         <p></p>
-        <button>blazing Glare</button>
+        <button style="background-color: darkgray" id="BlazeGlare" onclick="learnSkill()">blazing Glare</button>
       </div>
     </div>
     <div id="combatMenu" style="background-color: lightgray;padding: 10px; width: 500px;height: 150px;margin: 5px;" hidden>
@@ -93,4 +95,4 @@
   grid-template-columns:1fr 1fr 1fr;
   grid-template-rows:1fr 1fr 1fr;
 }
-</style>="main.js"></script>
+</style>
