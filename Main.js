@@ -1,17 +1,19 @@
-var hp = 100;
-var mp = 5;
-var xpos = 0;
-var ypos = 0;
-var possibleEncounters = ["battle", "search"];
-var possibleEnemies = ["water", "energy"];
-var enemyTrees = [1, 2]
-var powertrees = [0, 0]
-var powerrequires = [0, 0];
-var powernames = ["scratch", "resistance"];
-var powerspower = [15, 10];
-var powereffect = ["1", "2"];
+let hp = 100;
+let mp = 5;
+let xpos = 0;
+let ypos = 0;
+let possibleEncounters = ["battle", "search"];
+let possibleEnemies = ["water", "energy"];
+const enemyTrees = [1, 2]
+const powertrees = [0, 0, 1, 1]
+const powerrequires = [0, 0, 0, 1];
+let powernames = ["scratch", "resistance", "spark", "fire"];
+let powerspower = [15, 10, 25, 15];
+let powereffect = ["1", "2", "1", "3"];
+let unlockedPowers = [];
+//3 is burning, meaning that without specific items, it will apply a burning effect and perform 1
 //2 is defence in that the ability's power will increase block by that amount
-//1 is jsut damage in that it will damage the opponent by that amount
+//1 is just damage in that it will damage the opponent by that amount
 
 function moveMap(x,y) {
   xpos = xpos + x;
@@ -53,6 +55,23 @@ function characterMenu(){
 
 function closeCharacter(){
   document.getElementById("characterMenuDiv").style.display = "none";
+}
+
+function learnSkill(skillId){
+  if(powerrequires[skillId].includes("/")){
+    if(unlockedPowers.includes(powerrequires[skillId]) == true) {
+      var i = 0;
+      //placeholder since i want to get the intial code down first
+    }
+  }else if(powerrequires[skillId] != 0) {
+    if(unlockedPowers.includes(powerrequires[skillId]) == true) {
+      unlockedPowers[unlockedPowers.length] = skillId;
+      document.getElementById().style.background-color = "lightgray";
+    }
+  }else{
+    unlockedPowers[unlockedPowers.length] = skillId;
+    document.getElementById().style.background-color = "lightgray";
+  }
 }
 
 function startBattle(enemy) {
