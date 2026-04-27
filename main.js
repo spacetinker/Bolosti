@@ -3,17 +3,19 @@ let mp = 5;
 let xpos = 0;
 let ypos = 0;
 let possibleEncounters = ["battle", "search"];
-let possibleEnemies = ["water", "energy"];
-const enemyTrees = [1, 2]
-const powertrees = [0, 0, 1, 1]
-const powerrequires = [0, 0, 0, 1];
+let possibleEnemies = ["energy"];
+let treeId = 1;
+// temporary, make it settable later on
+let enemyTrees = [1, 2];
+let powertrees = [0, 0, 1, 1];
+let powerrequires = [0, 0, 0, 1];
 let powernames = ["scratch", "resistance", "spark", "fire"];
 let powerspower = [15, 10, 25, 15];
 let powereffect = ["1", "2", "1", "3"];
-let unlockedPowers = [];
+let unlockedPowers = [0, 1];
 //3 is burning, meaning that without specific items, it will apply a burning effect and perform 1
 //2 is defence in that the ability's power will increase block by that amount
-//1 is just damage in that it will damage the opponent by that amount
+//1 is jsut damage in that it will damage the opponent by that amount
 
 function moveMap(x,y) {
   xpos = xpos + x;
@@ -38,10 +40,10 @@ function moveMap(x,y) {
 }
 
 function encounterStart() {
-  var encounter = possibleEncounters[Math.random(1,possibleEncounters.length)];
-  if(encounter == "battle") {
-    startBattle(possibleEnemies[Math.random(1,possibleEnemies.length)])
-  }
+  let encounter = possibleEncounters[Math.random(1,possibleEncounters.length)];
+    if(encounter == "battle") {
+      startBattle(possibleEnemies[Math.random(1,possibleEnemies.length)])
+    }
 }
 
 function closeIntro() {
@@ -57,23 +59,41 @@ function closeCharacter(){
   document.getElementById("characterMenuDiv").style.display = "none";
 }
 
-function learnSkill(skillId){
-  if(powerrequires[skillId].includes("/")){
-    if(unlockedPowers.includes(powerrequires[skillId]) == true) {
-      var i = 0;
-      //placeholder since i want to get the intial code down first
+function openSkills(){
+  loadSkills();
+  document.getElementById("skillTree").hidden = false;
+}
+
+function loadSkills(){
+  console.log("loaded skills")
+  console.log(powertrees.indexOf(treeId))
+  var i = powertrees.indexOf(treeId);
+  while(i != powertrees.lastIndexOf(treeId)+1){
+    console.log(i)
+    if(unlockedPowers.includes(i)){
+      console.log(powernames[i] + " unlocked " + powerrequires[i])
+      document.getElementById(powernames[i]).style.backgroundColor = "white";
+    }else if (unlockedPowers.includes(powerrequires[i]) || powerrequires[i] == 0){
+      console.log(powernames[i] + " loaded " + powerrequires[i])
+      document.getElementById(powernames[i]).style.backgroundColor = "lightgray";
     }
-  }else if(powerrequires[skillId] != 0) {
-    if(unlockedPowers.includes(powerrequires[skillId]) == true) {
-      unlockedPowers[unlockedPowers.length] = skillId;
-      document.getElementById().style.background-color = "lightgray";
-    }
-  }else{
-    unlockedPowers[unlockedPowers.length] = skillId;
-    document.getElementById().style.background-color = "lightgray";
+    i++;
   }
 }
 
+function learnSkill(skillId){
+  console.log(powerrequires[skillId])
+  if(unlockedPowers.includes(skillId) == false){
+  if(powerrequires[skillId] == 0){
+    unlockedPowers[unlockedPowers.length] = skillId;
+    loadSkills();
+  }else if(unlockedPowers.includes(powerrequires[skillId])){
+    unlockedPowers[unlockedPowers.length] = skillId;
+    loadSkills();
+  }}
+  console.log(unlockedPowers);
+}
+//83 : nothing here
 function startBattle(enemy) {
   document.getElementById("combatMenu").hidden = false;
   document.getElementById("nonCombatMenu").hidden = true;
