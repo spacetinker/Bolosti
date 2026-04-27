@@ -1,7 +1,7 @@
 <html>
   <body>
-    <div id="intro">
-      <p>
+  <div id="intro">
+    <p>
         recently scientists have created a creature known as the bolosti,
         this creature is capable of having enhancements making it able to control elements,
         such as energy, water, earth, plants, and darkness, somehow.
@@ -17,7 +17,7 @@
         start
       </button>
     </div>
-    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px;" hidden>
+    <div id="nonCombatMenu"style="background-color: lightgrey;width: 500px;height:250px;padding:10px; margin :5px; hidden">
       <button style="float:right" onclick="characterMenu()">Character</button>
       <div id="map" style="background-color: white;width: 100px;height:100px;padding:5px;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;">
         <button id="northwest" onclick="moveMap(-1, 1)">NW</button>
@@ -30,36 +30,17 @@
         <button id="south" onclick="moveMap(0, -1)">S</button>
         <button id="southeast" onclick="moveMap(1, -1)">SE</button>
       </div>        
-      
       <div id="map info" style="background-color: white;width: 100px;height:100px;padding:5px;">
         <p id="mapPos">pos: 0, 0</p>
       </div>
     </div>
     <div id="characterMenuDiv" hidden>
       <button style="grid-column:1 / span 1;grid-row: 1 / span 1;" onclick="closeCharacter()">Close</button>
-      <button style="grid-column:1 / span 1;grid-row: 2 / span 1;">Skill Tree</button>
+      <button style="grid-column:1 / span 1;grid-row: 2 / span 1;" onclick="openSkills()">Skill Tree</button>
       <div id="characterInfo" style="grid-column: 2 / span 2 ;grid-row: 1 / span 3 ;background-color: white;"></div> 
     </div>
-    <div id="skillTree">
-      <div id="energyTree" style="display:grid;padding:10px;background-color: lightgrey;grid-template-rows: repeat(5, 1fr);grid-template-columns: repeat(5, 1fr)">
-        <button style="background-color: darkgray" id="scorch" onclick="learnSkill()">scorch</button>
-        <button style="background-color: darkgray" id="inferno" onclick="learnSkill()">inferno</button>
-        <p></p>
-        <button style="background-color: darkgray" id="overcharge" onclick="learnSkill()">overcharge</button>
-        <button style="background-color: darkgray" id="lightningstorm" onclick="learnSkill()">lightning Storm</button>
-        <p></p>
-        <button style="background-color: darkgray" id="fire" onclick="learnSkill(4)">fire</button>
-        <p style="text-align: center"><----!----></p>
-        <button style="background-color: darkgray" id="lightning" onclick="learnSkill()">lightning</button>
-        <p></p>
-        <button style="background-color: darkgray" id="plasma" onclick="learnSkill()">plasma</button>
-        <p></p>
-        <button style="background-color: white" id="spark" onclick="learnSkill(3)">spark</button>
-        <p></p>
-        <button style="background-color: darkgray" id="BlazeGlare" onclick="learnSkill()">blazing Glare</button>
-      </div>
-    </div>
-    <div id="combatMenu" style="background-color: lightgray;padding: 10px; width: 500px;height: 150px;margin: 5px;" hidden>
+   
+    <div id="combatMenu" hidden>
       <div id="stats">
         <p id="hp">Hp : 100</p>
         <p id="mana">Mp : 5</p>
@@ -70,10 +51,37 @@
         <button id="Power3"> - - </button>
         <button id="Power4"> - - </button>
       </div>
-  </body>
-</html>
-<script src="main.js"></script>
+    </div>
+    <div id="skillTree" hidden>
+      <div id="energyTree" style="display:grid;padding:10px;background-color: lightgrey;grid-template-rows: repeat(3, 1fr);grid-template-columns: repeat(5, 1fr)">
+        <button style="background-color: darkgray" id="scorch" onclick="learnSkill()">scorch</button>
+        <button style="background-color: darkgray" id="inferno" onclick="learnSkill()">inferno</button>
+        <p></p>
+        <button style="background-color: darkgray" id="overcharge" onclick="learnSkill()">overcharge</button>
+        <button style="background-color: darkgray" id="lightningstorm" onclick="learnSkill()">lightning Storm</button>
+        <p></p>
+        <button style="background-color: darkgray" id="fire" onclick="learnSkill(3)">fire</button>
+        <p style="text-align: center"><----!----></p>
+        <button style="background-color: darkgray" id="lightning" onclick="learnSkill()">lightning</button>
+        <p></p>
+        <button style="background-color: darkgray" id="plasma" onclick="learnSkill()">plasma</button>
+        <p></p>
+        <button style="background-color: light"onclick="learnSkill(2)" id="spark">spark</button>
+        <p></p>
+        <button style="background-color: darkgray" id="BlazeGlare" onclick="learnSkill()">blazing Glare</button>
+    </div>
+  </div>
+  <script src="Main.js"></script>
+ </body>
 <style>
+#combatMenu {
+  background-color: lightgray;
+  padding: 10px;
+  width: 500px;
+  height: 150px;
+  margin: 5px;
+}
+  
 #characterMenuDiv {
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
@@ -96,3 +104,4 @@
   grid-template-rows:1fr 1fr 1fr;
 }
 </style>
+</html>
