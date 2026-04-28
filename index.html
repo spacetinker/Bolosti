@@ -52,8 +52,9 @@
         <button id="Power4"> - - </button>
       </div>
     </div>
-    <div id="skillTree" hidden>
-      <div id="energyTree" style="display:grid;padding:10px;background-color: lightgrey;grid-template-rows: repeat(3, 1fr);grid-template-columns: repeat(5, 1fr)">
+    <div id="skillTree" style="background-color: lightgrey;padding: 10px" hidden>
+      <button onclick="closeSkill()">close Skill Tree</button>
+      <div id="energyTree" style="display:grid;grid-template-rows: repeat(3, 1fr);grid-template-columns: repeat(5, 1fr);margin: 10px">
         <button style="background-color: darkgray" id="scorch" onclick="learnSkill()">scorch</button>
         <button style="background-color: darkgray" id="inferno" onclick="learnSkill()">inferno</button>
         <p></p>
@@ -62,14 +63,19 @@
         <p></p>
         <button style="background-color: darkgray" id="fire" onclick="learnSkill(3)">fire</button>
         <p style="text-align: center"><----!----></p>
-        <button style="background-color: darkgray" id="lightning" onclick="learnSkill()">lightning</button>
+        <button style="background-color: darkgray" id="lightning" onclick="learnSkill(4)">lightning</button>
         <p></p>
         <button style="background-color: darkgray" id="plasma" onclick="learnSkill()">plasma</button>
         <p></p>
-        <button style="background-color: light"onclick="learnSkill(2)" id="spark">spark</button>
+        <button style="background-color: lightgray"  id="spark" onclick="learnSkill(2)">spark</button>
         <p></p>
         <button style="background-color: darkgray" id="BlazeGlare" onclick="learnSkill()">blazing Glare</button>
     </div>
+      <button id="PowerTree1" onclick="placePower(0)"> - - </button>
+      <button id="PowerTree2" onclick="placePower(1)"> - - </button>
+      <button id="PowerTree3" onclick="placePower(2)"> - - </button>
+      <button id="PowerTree4" onclick="placePower(3)"> - - </button>
+      <p id="powerSelectInfo">None Selected</p>
   </div>
   <script src="Main.js"></script>
  </body>
